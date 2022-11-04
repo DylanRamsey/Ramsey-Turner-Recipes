@@ -1,13 +1,168 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --light: #eee;
+  --dark: #342F4E;
+  --darker: #262336;
+  --blue: #61DAFB;
+  --crimson: #DB3052;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  @apply 
+  m-0 
+  p-0 
+  box-border;
+  font-family: 'Fira sans', sans-serif;
+}
+
+body {
+  background-color: var(--darker);
+}
+
+.App {
+  @apply 
+  text-center 
+  pt-16;
+  color: var(--light);
+
+}
+
+h1 {
+  @apply 
+  text-4xl	
+  uppercase 
+  mb-4;
+}
+
+.recipes {
+  @apply 
+  grid 
+  mt-8 
+  mx-auto 
+  mb-0 
+  gap-4 
+  max-w-5xl;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+}
+
+.recipe {
+  @apply 
+  p-4 
+  rounded-lg	
+  text-left;
+  background-color: var(--dark);
+}
+
+button {
+  @apply 
+  appearance-none 
+  outline-none 
+  cursor-pointer 
+  font-bold 
+  uppercase 
+  px-2 
+  py-4 
+  rounded;
+  color: var(--darker);
+  background-color: var(--blue);
+}
+
+
+.buttons {
+  @apply 
+  flex 
+  items-center 
+  mt-8 
+  -ml-2;
+}
+
+.buttons button {
+  @apply 
+  my-0 
+  mx-2;
+}
+
+button.remove {
+  color: var(--light);
+  background-color: var(--crimson);
+}
+
+h4 {
+  @apply 
+  mb-4 
+  mt-8;
+}
+
+ol, ul {
+  @apply list-none;
+}
+
+li {
+  @apply leading-6;
+}
+
+.popup {
+  @apply 
+  fixed 
+  text-left	
+  top-0 
+  left-0 
+  w-full 
+  h-full 
+  flex 
+  items-center 
+  justify-center 
+  z-10;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-inner {
+  background-color: var(--dark);
+  @apply
+  p-4
+  w-full
+  max-w-lg
+  rounded-lg
+  overflow-auto;
+  max-height: calc(100vh - 4rem);
+}
+
+.popup h2 {
+  @apply
+  mb-4;
+}
+
+.form-group {
+  @apply
+  mb-4;
+}
+
+.form-group:last-of-type {
+  @apply
+  mb-0;
+}
+
+input, textarea {
+  @apply
+  block
+  w-full
+  p-2
+  resize-y	
+  mb-2
+  max-h-52;
+}
+
+.form-group label {
+  @apply
+  block
+  mb-2;
+}
+
+.form-group button {
+  @apply
+  mt-4;
 }
