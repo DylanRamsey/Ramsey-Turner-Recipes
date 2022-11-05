@@ -1,4 +1,4 @@
-## Ramsey + Turner Recipes
+# Ramsey + Turner Recipes
 
 This is a web app to host our family recipes for our own reference, and to share with family and friends.
 This app was built with React JS, Tailwind, and uses Firebase for real-time database hosting
@@ -40,4 +40,4 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-# Ramsey-Turner-Recipes
+
