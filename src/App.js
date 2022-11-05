@@ -1,6 +1,7 @@
 import { db } from "./firebase.config"
 import { useState, useEffect } from "react"
 import Recipes from "./components/organisms/Recipes/Recipes"
+import Button from "./components/atoms/Button"
 import {
   collection,
   onSnapshot,
@@ -117,8 +118,7 @@ function App() {
       <h1>Ramsey + Turner Recipes</h1>
       <Recipes recipes={recipes} handleView={handleView} removeRecipe={removeRecipe} />
       
-      <button onClick={() => setPopupActive(!popupActive)}>Add recipe</button>
-
+      <Button text="Add Recipe" setPopupActive={setPopupActive} popupActive={popupActive}/>
       
 
       { popupActive && <div className="popup">

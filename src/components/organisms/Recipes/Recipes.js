@@ -5,7 +5,7 @@ const Recipes = (props) => {
       <div className="recipe" key={recipe.id}>
         <h3>{ recipe.title }</h3>
 
-        <p dangerouslySetInnerHTML={{ __html: recipe.desc }}></p>
+        <p>{ recipe.desc }</p>
 
         { recipe.viewing && <div>
           <h4>Ingredients</h4>
