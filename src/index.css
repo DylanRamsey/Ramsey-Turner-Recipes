@@ -8,6 +8,9 @@
   --darker: #262336;
   --blue: #61DAFB;
   --crimson: #DB3052;
+  --bark: #D1A479;
+  --cream: #FFDFC1;
+  --light-white: #F6F6E6;
 }
 
 * {
@@ -19,7 +22,7 @@
 }
 
 body {
-  background-color: var(--darker);
+  background-color: var(--cream);
 }
 
 .App {
@@ -32,29 +35,68 @@ body {
 
 h1 {
   @apply 
-  text-4xl	
+  text-black
   uppercase 
   mb-4;
+  font-size: 3.125rem;
 }
+
+h2 {
+  @apply
+  text-black;
+  font-size: 2.625rem;
+}
+
+h3 {
+  @apply
+  text-black;
+  font-size: 2.25rem;
+}
+
+h4 {
+  @apply
+  text-black
+  mb-4 
+  mt-8;
+  font-size: 1.75rem;
+}
+
+h5 {
+  @apply
+  text-black;
+  font-size: 1.5rem;
+}
+
+p {
+  @apply
+  text-black;
+  font-size: 1rem;
+}
+
 
 .recipes {
   @apply 
-  grid 
   mt-8 
   mx-auto 
   mb-0 
   gap-4 
   max-w-5xl;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-
 }
 
 .recipe {
   @apply 
   p-4 
+  mb-8
   rounded-lg	
   text-left;
-  background-color: var(--dark);
+  background-color: var(--light-white);
+  box-shadow:
+  0 1px 1px hsl(0deg 0% 0% / 0.075),
+  0 2px 2px hsl(0deg 0% 0% / 0.075),
+  0 4px 4px hsl(0deg 0% 0% / 0.075),
+  0 8px 8px hsl(0deg 0% 0% / 0.075),
+  0 16px 16px hsl(0deg 0% 0% / 0.075)
+;
 }
 
 button {
@@ -66,11 +108,17 @@ button {
   uppercase 
   px-2 
   py-4 
-  rounded;
-  color: var(--darker);
-  background-color: var(--blue);
+  rounded
+  text-black;
+  background-color: var(--bark);
+  font-size: 1rem;
+  box-shadow:
+  0 1px 1px hsl(0deg 0% 0% / 0.075),
+  0 2px 2px hsl(0deg 0% 0% / 0.075),
+  0 4px 4px hsl(0deg 0% 0% / 0.075),
+  0 8px 8px hsl(0deg 0% 0% / 0.075),
+  0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
-
 
 .buttons {
   @apply 
@@ -91,18 +139,23 @@ button.remove {
   background-color: var(--crimson);
 }
 
-h4 {
-  @apply 
-  mb-4 
-  mt-8;
-}
 
 ol, ul {
-  @apply list-none;
+  @apply 
+  list-inside
+  text-black;
+  font-size: 1rem;
 }
 
 li {
-  @apply leading-6;
+  @apply 
+  list-disc 
+  leading-6;
+}
+
+ol {
+  @apply 
+  list-decimal;
 }
 
 .popup {
@@ -117,11 +170,12 @@ li {
   items-center 
   justify-center 
   z-10;
-  background-color: rgba(0, 0, 0, 0.5);
+  
+
 }
 
 .popup-inner {
-  background-color: var(--dark);
+  background-color: var(--cream);
   @apply
   p-4
   w-full
@@ -129,6 +183,13 @@ li {
   rounded-lg
   overflow-auto;
   max-height: calc(100vh - 4rem);
+  
+  box-shadow:
+  0 1px 1px hsl(0deg 0% 0% / 0.075),
+  0 2px 2px hsl(0deg 0% 0% / 0.075),
+  0 4px 4px hsl(0deg 0% 0% / 0.075),
+  0 8px 8px hsl(0deg 0% 0% / 0.075),
+  0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
 
 .popup h2 {
@@ -138,6 +199,7 @@ li {
 
 .form-group {
   @apply
+  text-black
   mb-4;
 }
 

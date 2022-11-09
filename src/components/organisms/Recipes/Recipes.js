@@ -3,9 +3,9 @@ const Recipes = (props) => {
     <div className="recipes">
     { props.recipes.map((recipe, i) => (
       <div className="recipe" key={recipe.id}>
-        <h3>{ recipe.title }</h3>
+        <h2>{ recipe.title }</h2>
 
-        <p>{ recipe.desc }</p>
+        <h5>{ recipe.desc }</h5>
 
         { recipe.viewing && <div>
           <h4>Ingredients</h4>
@@ -25,7 +25,9 @@ const Recipes = (props) => {
 
         <div className="buttons">
           <button onClick={() => props.handleView(recipe.id)}>View { recipe.viewing ? 'less' : 'more' }</button>
-          <button className="remove" onClick={() => props.removeRecipe(recipe.id)}>Remove</button>
+          { recipe.viewing && <div>
+            <button className="remove" onClick={() => props.removeRecipe(recipe.id)}>Remove Recipe</button>
+          </div>}          
         </div>              
       </div>
     ))}

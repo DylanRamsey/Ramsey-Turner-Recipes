@@ -2,6 +2,9 @@ import { db } from "./firebase.config"
 import { useState, useEffect } from "react"
 import Recipes from "./components/organisms/Recipes/Recipes"
 import Button from "./components/atoms/Button"
+import Cutlery from "./svgs/cutlery.svg"
+
+
 import {
   collection,
   onSnapshot,
@@ -115,7 +118,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Ramsey + Turner Recipes</h1>
+      <div className="flex justify-center items-center">
+        <h1>Ramsey + Turner Recipes</h1>
+        <img className="mx-4" src={ Cutlery } alt="Cutlery Logo" />
+      </div>
       <Recipes recipes={recipes} handleView={handleView} removeRecipe={removeRecipe} />
       
       <Button text="Add Recipe" setPopupActive={setPopupActive} popupActive={popupActive}/>
