@@ -1,9 +1,8 @@
 import { db } from "./firebase.config"
 import { useState, useEffect } from "react"
+import Heading from "./components/atoms/Heading"
 import Recipes from "./components/organisms/Recipes/Recipes"
 import Button from "./components/atoms/Button"
-import Cutlery from "./svgs/cutlery.svg"
-
 
 import {
   collection,
@@ -118,10 +117,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="flex justify-center items-center">
-        <h1>Ramsey + Turner Recipes</h1>
-        <img className="mx-4" src={ Cutlery } alt="Cutlery Logo" />
-      </div>
+      <Heading />
       <Recipes recipes={recipes} handleView={handleView} removeRecipe={removeRecipe} />
       
       <Button text="Add Recipe" setPopupActive={setPopupActive} popupActive={popupActive}/>
@@ -178,10 +174,9 @@ function App() {
             </div>
 
             <div className="buttons">
-              <button type="submit">Submit</button>
-              <button type="button" class="remove" onClick={() => setPopupActive(false)}>Close</button>
+              <button type="submit" className="submit">Submit</button>
+              <button type="button" className="remove" onClick={() => setPopupActive(false)}>Close</button>
             </div>
-
           </form>
         </div>
       </div>}

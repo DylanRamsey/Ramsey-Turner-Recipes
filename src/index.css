@@ -10,7 +10,7 @@
   --crimson: #DB3052;
   --bark: #D1A479;
   --cream: #FFDFC1;
-  --light-white: #F6F6E6;
+  --light-white: #fdfdf4;
 }
 
 * {
@@ -149,13 +149,17 @@ ol, ul {
 
 li {
   @apply 
-  list-disc 
   leading-6;
 }
 
 ol {
   @apply 
   list-decimal;
+}
+
+ul{
+  @apply 
+  list-disc 
 }
 
 .popup {
@@ -170,12 +174,10 @@ ol {
   items-center 
   justify-center 
   z-10;
-  
-
 }
 
 .popup-inner {
-  background-color: var(--cream);
+  background-color: var(--light-white);
   @apply
   p-4
   w-full
@@ -216,6 +218,7 @@ input, textarea {
   resize-y	
   mb-2
   max-h-52;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 8%), 0 2px 2px hsl(0deg 0% 0% / 8%), 0 4px 4px hsl(0deg 0% 0% / 8%), 0 8px 8px hsl(0deg 0% 0% / 8%), 0 16px 16px hsl(0deg 0% 0% / 8%);
 }
 
 .form-group label {
@@ -227,4 +230,9 @@ input, textarea {
 .form-group button {
   @apply
   mt-4;
+  background-color: var(--bark);
+}
+
+.submit {
+  background: var(--bark);
 }
