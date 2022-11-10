@@ -27,9 +27,7 @@ const Recipes = (props) => {
 
         <div className="buttons">
           <button onClick={() => props.handleView(recipe.id)}>View { recipe.viewing ? 'less' : 'more' }</button>
-          { recipe.viewing && <div>
             <RemoveModal removeRecipe={props.removeRecipe} recipe={recipe}/>
-          </div>}          
         </div>              
       </div>
     ))}

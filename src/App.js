@@ -2,7 +2,6 @@ import { db } from "./firebase.config"
 import { useState, useEffect } from "react"
 import Heading from "./components/atoms/Heading"
 import Recipes from "./components/organisms/Recipes/Recipes"
-import Button from "./components/atoms/Button"
 
 import {
   collection,
@@ -120,8 +119,7 @@ function App() {
       <Heading />
       <Recipes recipes={recipes} handleView={handleView} removeRecipe={removeRecipe} />
       
-      <Button text="Add Recipe" setPopupActive={setPopupActive} popupActive={popupActive}/>
-      
+      <button onClick={() => setPopupActive(!popupActive)}>Add Recipe</button>
 
       { popupActive && <div className="popup">
         <div className="popup-inner">
