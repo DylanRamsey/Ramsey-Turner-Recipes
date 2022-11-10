@@ -1,3 +1,5 @@
+import RemoveModal from "../../molecules/RemoveModal"
+
 const Recipes = (props) => {
   return (
     <div className="recipes">
@@ -26,7 +28,7 @@ const Recipes = (props) => {
         <div className="buttons">
           <button onClick={() => props.handleView(recipe.id)}>View { recipe.viewing ? 'less' : 'more' }</button>
           { recipe.viewing && <div>
-            <button className="remove" onClick={() => props.removeRecipe(recipe.id)}>Remove Recipe</button>
+            <RemoveModal removeRecipe={props.removeRecipe} recipe={recipe}/>
           </div>}          
         </div>              
       </div>
