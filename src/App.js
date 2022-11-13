@@ -2,6 +2,7 @@ import { db } from "./firebase.config"
 import { useState, useEffect } from "react"
 import Heading from "./components/atoms/Heading"
 import Recipes from "./components/organisms/Recipes/Recipes"
+import RecipeModal from "./components/organisms/Recipes/RecipeModal"
 
 import {
   collection,
@@ -20,7 +21,6 @@ function App() {
     steps: []
   })
   const [popupActive, setPopupActive] = useState(false)
-
   const recipesCollectionRef = collection(db, "recipes")
 
   useEffect(() => {
@@ -37,7 +37,6 @@ function App() {
 
   const handleView = id => {
     const recipesClone = [...recipes]
-
     recipesClone.forEach(recipe => {
       if (recipe.id === id) {
         recipe.viewing = !recipe.viewing
@@ -45,13 +44,11 @@ function App() {
         recipe.viewing = false
       }
     })
-
     setRecipes(recipesClone)
   }
 
   const handleSubmit = e => {
     e.preventDefault()
-
     if (
       !form.title ||
       !form.desc ||
@@ -118,66 +115,18 @@ function App() {
     <div className="App">
       <Heading />
       <Recipes recipes={recipes} handleView={handleView} removeRecipe={removeRecipe} />
-      
       <button onClick={() => setPopupActive(!popupActive)}>Add Recipe</button>
-
-      { popupActive && <div className="popup">
-        <div className="popup-inner">
-          <h2>Add a new recipe</h2>
-
-          <form onSubmit={handleSubmit}>
-
-            <div className="form-group">
-              <label>Title</label>
-              <input 
-                type="text" 
-                value={form.title} 
-                onChange={e => setForm({...form, title: e.target.value})} />
-            </div>
-
-            <div className="form-group">
-              <label>Description</label>
-              <textarea 
-                type="text" 
-                value={form.desc} 
-                onChange={e => setForm({...form, desc: e.target.value})} />
-            </div>
-
-            <div className="form-group">
-              <label>Ingredients</label>
-              {
-                form.ingredients.map((ingredient, i) => (
-                  <input 
-                    type="text"
-                    key={i}
-                    value={ingredient} 
-                    onChange={e => handleIngredient(e, i)} />
-                ))
-              }
-              <button type="button" onClick={handleIngredientCount}>Add ingredient</button>
-            </div>
-
-            <div className="form-group">
-              <label>Steps</label>
-              {
-                form.steps.map((step, i) => (
-                  <textarea 
-                    type="text"
-                    key={i}
-                    value={step} 
-                    onChange={e => handleStep(e, i)} />
-                ))
-              }
-              <button type="button" onClick={handleStepCount}>Add step</button>
-            </div>
-
-            <div className="buttons">
-              <button type="submit" className="submit">Submit</button>
-              <button type="button" className="remove" onClick={() => setPopupActive(false)}>Close</button>
-            </div>
-          </form>
-        </div>
-      </div>}
+      <RecipeModal 
+        popupActive={popupActive}
+        setPopupActive={setPopupActive}
+        handleSubmit={handleSubmit}
+        form={form}
+        setForm={setForm}
+        handleIngredient={handleIngredient}
+        handleIngredientCount={handleIngredientCount}
+        handleStep={handleStep}
+        handleStepCount={handleStepCount}
+        />
     </div>
   );
 }
