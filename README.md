@@ -1,7 +1,18 @@
 # Ramsey + Turner Recipes
 
 This is a web app to host our family recipes for our own reference, and to share with family and friends.
-This app was built with React JS, Tailwind, and uses Firebase for real-time database hosting
+This app was built with React JS, Tailwind, and uses Firebase for real-time database hosting.
+
+Application is currently in Alpha state
+
+Version 0.1.0
+
+Desired future features
+
+- Create log in system to allow user to delete recipes through the app, and put the "add recipe" functionality behind the login
+- Author area in recipe, with new author fields in the "Add Recipe" modal
+- Ability to sort recipes by type, author, etc
+- Pagination 
 
 ## Available Scripts
 

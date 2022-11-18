@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import Heading from "./components/atoms/Heading"
 import Recipes from "./components/organisms/Recipes/Recipes"
 import RecipeModal from "./components/organisms/Recipes/RecipeModal"
+import Versioning from "./components/atoms/Versioning"
 
 import {
   collection,
@@ -127,6 +128,7 @@ function App() {
         handleStep={handleStep}
         handleStepCount={handleStepCount}
         />
+        <Versioning />
     </div>
   );
 }

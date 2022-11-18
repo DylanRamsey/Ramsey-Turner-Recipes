@@ -6,9 +6,7 @@ const Recipes = (props) => {
     { props.recipes.map((recipe, i) => (
       <div className="recipe" key={recipe.id}>
         <h2>{ recipe.title }</h2>
-
         <h5>{ recipe.desc }</h5>
-
         { recipe.viewing && <div>
           <h4>Ingredients</h4>
           <ul>
