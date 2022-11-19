@@ -9,6 +9,7 @@ Version 0.1.0
 
 Desired future features
 
+- Better mobile responsiveness
 - Create log in system to allow user to delete recipes through the app, and put the "add recipe" functionality behind the login
 - Author area in recipe, with new author fields in the "Add Recipe" modal
 - Ability to sort recipes by type, author, etc
